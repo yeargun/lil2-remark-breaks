@@ -1,7 +1,6 @@
 {
   "name": "@itslil/lil2-remark-breaks",
-  "version": "0.0.0",
-  "private": true,
+  "version": "0.1.0",
   "description": "remark-breaks, rewritten in typed LilScript: line endings in text become hard breaks, same trees",
   "type": "module",
   "license": "MIT",
@@ -10,10 +9,29 @@
     "type": "git",
     "url": "git+https://github.com/yeargun/lil2-remark-breaks.git"
   },
+  "bugs": {
+    "url": "https://github.com/yeargun/lil2-remark-breaks/issues"
+  },
   "homepage": "https://yeargun.github.io/lil2-remark-breaks/",
+  "keywords": [
+    "remark",
+    "breaks",
+    "line-break",
+    "markdown",
+    "lilscript",
+    "lil2",
+    "typed",
+    "fast"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
   "main": "./dist/remark-breaks.js",
+  "types": "./types/index.d.ts",
   "exports": {
     ".": {
+      "types": "./types/index.d.ts",
       "convex": "./dist/remark-breaks.js",
       "deno": "./dist/remark-breaks.js",
       "edge-light": "./dist/remark-breaks.js",
@@ -22,8 +40,24 @@
       "workerd": "./dist/remark-breaks.js",
       "browser": "./dist/browser/remark-breaks.js",
       "default": "./dist/remark-breaks.js"
+    },
+    "./constants": {
+      "types": "./types/constants.d.ts",
+      "convex": "./dist/constants.js",
+      "deno": "./dist/constants.js",
+      "edge-light": "./dist/constants.js",
+      "react-native": "./dist/constants.js",
+      "worker": "./dist/constants.js",
+      "workerd": "./dist/constants.js",
+      "browser": "./dist/browser/constants.js",
+      "default": "./dist/constants.js"
     }
   },
+  "files": [
+    "dist/**/*.js",
+    "types",
+    "NOTICE.md"
+  ],
   "scripts": {
     "check:sources": "node scripts/shared-sources.mjs",
     "build:dev": "node scripts/build.mjs --dev",
