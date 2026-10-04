@@ -1,0 +1,41 @@
+{
+  "name": "@itslil/lil2-remark-breaks",
+  "version": "0.0.0",
+  "private": true,
+  "description": "remark-breaks, rewritten in typed LilScript: line endings in text become hard breaks, same trees",
+  "type": "module",
+  "license": "MIT",
+  "author": "yeargun",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yeargun/lil2-remark-breaks.git"
+  },
+  "homepage": "https://yeargun.github.io/lil2-remark-breaks/",
+  "main": "./dist/remark-breaks.js",
+  "exports": {
+    ".": {
+      "convex": "./dist/remark-breaks.js",
+      "deno": "./dist/remark-breaks.js",
+      "edge-light": "./dist/remark-breaks.js",
+      "react-native": "./dist/remark-breaks.js",
+      "worker": "./dist/remark-breaks.js",
+      "workerd": "./dist/remark-breaks.js",
+      "browser": "./dist/browser/remark-breaks.js",
+      "default": "./dist/remark-breaks.js"
+    }
+  },
+  "scripts": {
+    "check:sources": "node scripts/shared-sources.mjs",
+    "build:dev": "node scripts/build.mjs --dev",
+    "build": "node scripts/build.mjs",
+    "test": "npm run check:sources && node --test test/differential.test.mjs test/browser.test.mjs"
+  },
+  "devDependencies": {
+    "character-entities": "^2.0.2",
+    "commonmark.json": "^0.31.0",
+    "mdast-util-from-markdown": "^2.0.3",
+    "mdast-util-newline-to-break": "^2.0.0",
+    "mdast-util-to-hast": "^13.2.1",
+    "playwright-core": "^1.62.0"
+  }
+}
